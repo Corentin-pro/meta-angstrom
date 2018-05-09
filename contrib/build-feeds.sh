@@ -22,12 +22,12 @@ do_build() {
         if [ $DO_UCLIBC = 1 ]
         then
                 BUILD_MODE="uclibc"
-                
+
                 if [ "$BUILD_CLEAN" != "" ]
                 then
                         TCLIBC=uclibc MACHINE=$BUILD_MACHINE bitbake -c clean $BUILD_CLEAN
                 fi
-                
+
                 for target in $BUILD_TARGETS
                 do
                         TCLIBC=uclibc MACHINE=$BUILD_MACHINE bitbake $target && do_report_success
@@ -120,7 +120,7 @@ do
                       e-uae \
                       e-wm \
                       ekiga \
-                      empathy \ 
+                      empathy \
                       emtooth \
                       enna \
                       eog \
@@ -152,7 +152,6 @@ do
                       gdal \
                       gdb \
                       gdbserver \
-                      gdm \
                       geany \
                       geda \
                       geda-docs \
@@ -420,7 +419,7 @@ do
                       zudoku \
                       "
         do_build
-done        
+done
 
 # machine packages (machine specific (sub)packages)
 
@@ -437,7 +436,7 @@ do
         BUILD_TARGETS="packagegroup-base packagegroup-boot \
                        packagegroup-opie packagegroup-opie-all \
                        angstrom-x11-base-depends angstrom-gpe-packagegroup-settings \
-                       xserver-xorg-conf \ 
+                       xserver-xorg-conf \
                        "
 
         do_build
@@ -449,4 +448,4 @@ do
         BUILD_TARGETS="linux-kexecboot \
 		       "
 	do_build
-done	
+done
